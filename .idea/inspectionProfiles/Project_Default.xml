@@ -1,0 +1,39 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list>
+          <option value="fastapi" />
+          <option value="loguru" />
+          <option value="requests" />
+          <option value="websockets" />
+          <option value="aiofiles" />
+          <option value="pydub" />
+          <option value="esdk-obs-python" />
+          <option value="httpx" />
+          <option value="volcengine-python-sdk" />
+          <option value="volcengine" />
+          <option value="pydantic" />
+          <option value="elevenlabs" />
+          <option value="aiohttp" />
+          <option value="Pillow" />
+          <option value="numpy" />
+          <option value="moviepy" />
+          <option value="librosa" />
+          <option value="redis" />
+          <option value="psutil" />
+          <option value="opencv-python" />
+          <option value="huey" />
+          <option value="jieba" />
+          <option value="pysubs2" />
+          <option value="uvicorn" />
+          <option value="google" />
+          <option value="protobuf" />
+          <option value="pypinyin" />
+          <option value="zhconv" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
