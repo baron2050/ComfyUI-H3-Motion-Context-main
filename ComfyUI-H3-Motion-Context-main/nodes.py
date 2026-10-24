@@ -583,7 +583,16 @@ class MiniMaxH3MotionContext:
                 # short as often as it reaches past. The end coordinate
                 # moves by exactly that much, and a keyframe index is a
                 # plain multiplier so it takes a fractional frame.
-                end_frame = float(span if anchor_mode == "head" else 0)
+                if pin_video:
+                    end_frame = float(span if anchor_mode == "head" else 0)
+                else:
+                    # Audio-only mode: end the audio window at context_length
+                    # frames into the clip so the model reads it as "this
+                    # clip's audio so far" rather than "audio from before
+                    # the clip." Without this, the pinned audio sits entirely
+                    # at negative time and a first_frame anchor at frame 0
+                    # overrides the continuation signal.
+                    end_frame = float(context_length)
                 end_frame += overhang / FRAME_RESCALE
                 # then snap the window onto the target's own audio grid.
                 # The end coordinate is FRAME_RESCALE * end_frame, and
